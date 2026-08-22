@@ -1,50 +1,20 @@
-# 站点设置
-# 可以直接编辑本文件，也可以在 /admin/ 后台的「站点设置」中修改。
-
-# 浏览器标题与导航左侧显示的站点名
-title: 面包房
-
-# 首页主视觉左侧的竖排标题（每行一项）
+title: 涼花の画室
 heroTitleLines:
-  - my
-  - artworks
-
-# 画师信息
-artist: 画师昵称
-handle: bakery_demo
-bio: 这里填写一句话简介，例如创作方向、接稿范围、更新频率等。
-
-# 关于页的自我介绍，每段一行
-aboutIntro: |
-  这里填写画师的自我介绍：创作方向、常用工具、接稿范围与流程等。
-  工作联系请通过邮件沟通；如果喜欢这里的作品，也欢迎在赞助页支持创作。
-  本站的每一件作品都可以点进详情页，按顺序看完该作品的全部图片。
-
-# 邮箱与赞助页链接（FANBOX、爱发电等），留空则不在页面上显示
-email: hello@example.com
-supportUrl: https://www.fanbox.cc/
-
-# 首页主视觉轮播展示的最新作品数量
+  - 涼花的
+  - 画室
+artist: 永見涼花
+handle: suzuka_nagami
+bio: 喵喵喵
+aboutIntro: 喵喵喵喵喵喵
+email: suzuka.nagami@outlook.com
+supportUrl: suzuka.cc
 heroCount: 5
-
-# 顶部导航菜单（站内路径）
 nav:
-  - label: HOME
+  - label: 主页
     href: /
-  - label: ABOUT
+  - label: 关于
     href: /about/
-
-# 首页主视觉与画师栏展示的社交链接，icon 可选：x / pixiv / instagram / mail
 links:
-  - label: X
-    href: https://x.com/your_name
-    icon: x
-  - label: pixiv
-    href: https://www.pixiv.net/
+  - label: Pixiv
+    href: https://www.pixiv.net/users/16024173
     icon: pixiv
-  - label: Instagram
-    href: https://www.instagram.com/
-    icon: instagram
-  - label: Email
-    href: mailto:hello@example.com
-    icon: mail
