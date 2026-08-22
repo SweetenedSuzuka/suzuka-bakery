@@ -1,0 +1,38 @@
+---
+import '../styles/global.css';
+import { site } from '../data/site';
+import { withBase } from '../utils/url';
+
+// 全站页面骨架：引入全局样式，输出 <head> 元信息、页面插槽与页脚
+interface Props {
+  title?: string;
+  description?: string;
+}
+const { title, description = site.bio } = Astro.props;
+const fullTitle = title ? `${title} · ${site.title}` : site.title;
+---
+
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>{fullTitle}</title>
+    <meta name="description" content={description} />
+    <meta property="og:title" content={fullTitle} />
+    <meta property="og:description" content={description} />
+    <link rel="icon" type="image/svg+xml" href={withBase('/favicon.svg')} />
+  </head>
+  <body class="flex min-h-screen flex-col">
+    <slot />
+
+    <footer class="mt-auto bg-dark-bg py-7 text-center text-xs tracking-[0.2em] text-white/70">
+      © {site.title} · Powered by
+      <a href="https://astro.build" target="_blank" rel="noopener" class="underline underline-offset-2 transition hover:text-white">Astro</a>
+      · Theme Bakery by
+      <a href="https://suzuka.cc" target="_blank" rel="noopener" class="underline underline-offset-2 transition hover:text-white">永見涼花</a>
+      ·
+      <a href="https://github.com/SweetenedSuzuka" target="_blank" rel="noopener" class="underline underline-offset-2 transition hover:text-white">GitHub</a>
+    </footer>
+  </body>
+</html>
