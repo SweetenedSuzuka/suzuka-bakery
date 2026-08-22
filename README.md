@@ -38,7 +38,7 @@ npm run build   # 输出到 dist/
 
 1. 把仓库推到 GitHub，按「部署到 GitHub Pages」一节配好。
 2. `public/admin/config.yml` 里把 `backend.repo` 改成你的仓库（`用户名/仓库名`），提交推送。
-3. 打开 `https://<你的域名>/admin/`，用 GitHub Token 登录（Personal Access Token，需要 Contents 读写权限）。
+3. 打开 `https://<你的域名>/admin/`，用 GitHub Token 登录（Personal Access Token，需要 Contents 读写权限）。如果希望点按钮直接走 GitHub 授权登录，按 [docs/github-login.md](docs/github-login.md) 配置一次认证服务即可。
 4. 「作品」→「新建」：填标题、日期、简介、标签，逐张传图（第一张是封面）。
 5. 保存后 CMS 会把改动提交到仓库，Actions 自动构建，几分钟后新作品上线。
 
@@ -77,8 +77,8 @@ images:
 
 - 站点信息：`src/data/site.yml`（或后台「站点设置」）
 - 配色：`src/styles/global.css` 顶部的 CSS 变量，`--accent` 是主题色
-- 头像：`src/assets/avatar.png`
-- 图标：`public/favicon.svg`
+- 头像：替换 `src/assets/avatar.png`，正方形 PNG 即可
+- 图标：替换 `public/favicon.svg`；只有位图就删掉它，改放 `public/favicon.png`
 
 ## 部署到 GitHub Pages
 

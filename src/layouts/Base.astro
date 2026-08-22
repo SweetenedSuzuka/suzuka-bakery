@@ -1,15 +1,22 @@
 ---
+import fs from 'node:fs';
 import '../styles/global.css';
 import { site } from '../data/site';
 import { withBase } from '../utils/url';
 
 // 全站页面骨架：引入全局样式，输出 <head> 元信息、页面插槽与页脚
+// 标签页图标：在 public/ 放置 favicon.svg 或 favicon.png，两者都有时优先使用 SVG
 interface Props {
   title?: string;
   description?: string;
 }
 const { title, description = site.bio } = Astro.props;
 const fullTitle = title ? `${title} · ${site.title}` : site.title;
+
+const faviconPath = fs.existsSync(new URL('../../public/favicon.svg', import.meta.url))
+  ? '/favicon.svg'
+  : '/favicon.png';
+const faviconType = faviconPath.endsWith('.svg') ? 'image/svg+xml' : 'image/png';
 ---
 
 <!doctype html>
@@ -21,7 +28,7 @@ const fullTitle = title ? `${title} · ${site.title}` : site.title;
     <meta name="description" content={description} />
     <meta property="og:title" content={fullTitle} />
     <meta property="og:description" content={description} />
-    <link rel="icon" type="image/svg+xml" href={withBase('/favicon.svg')} />
+    <link rel="icon" type={faviconType} href={withBase(faviconPath)} />
   </head>
   <body class="flex min-h-screen flex-col">
     <slot />
