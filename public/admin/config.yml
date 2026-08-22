@@ -75,16 +75,16 @@ singletons:
         name: avatar
         widget: image
         required: false
-        media_folder: public/uploads
-        public_folder: /uploads
-        hint: 留空则使用主题自带头像（src/assets/avatar.png）
+        media_folder: public/uploads/avatar
+        public_folder: /uploads/avatar
+        hint: 留空则使用主题自带头像（src/assets/avatar.png）；旧头像会在保存后自动清理
       - label: 标签页图标
         name: favicon
         widget: image
         required: false
-        media_folder: public/uploads
-        public_folder: /uploads
-        hint: 留空则使用 public/favicon.svg 或 favicon.png
+        media_folder: public/uploads/favicon
+        public_folder: /uploads/favicon
+        hint: 留空则使用 public/favicon.svg 或 favicon.png；旧图标会在保存后自动清理
       - { label: 一句话简介, name: bio, widget: text, required: false }
       - { label: 关于页介绍, name: aboutIntro, widget: text, required: false, hint: 显示在 ABOUT 页面的自我介绍，每段一行 }
       - { label: 邮箱, name: email, widget: string, required: false, hint: 留空则不显示 }
