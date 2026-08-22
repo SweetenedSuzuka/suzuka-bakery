@@ -71,10 +71,10 @@ singletons:
         field: { label: 行, name: line, widget: string }
       - { label: 画师昵称, name: artist, widget: string }
       - { label: 账号 ID, name: handle, widget: string }
-      - { label: 一句话简介, name: bio, widget: text }
-      - { label: 关于页介绍, name: aboutIntro, widget: text, hint: 显示在 ABOUT 页面的自我介绍，每段一行 }
-      - { label: 邮箱, name: email, widget: string, hint: 留空则不显示 }
-      - { label: 赞助页链接, name: supportUrl, widget: string, hint: FANBOX、爱发电等页面的完整网址，留空则不显示 }
+      - { label: 一句话简介, name: bio, widget: text, required: false }
+      - { label: 关于页介绍, name: aboutIntro, widget: text, required: false, hint: 显示在 ABOUT 页面的自我介绍，每段一行 }
+      - { label: 邮箱, name: email, widget: string, required: false, hint: 留空则不显示 }
+      - { label: 赞助页链接, name: supportUrl, widget: string, required: false, hint: FANBOX、爱发电等页面的完整网址，留空则不显示 }
       - { label: 主视觉轮播数量, name: heroCount, widget: number, value_type: int, min: 1, max: 10 }
       - label: 导航菜单
         name: nav

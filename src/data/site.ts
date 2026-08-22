@@ -22,6 +22,21 @@ export interface SiteConfig {
 }
 
 // 站点设置集中在 src/data/site.yml，也可以在 /admin/ 后台的「站点设置」中修改
-export const site = load(siteYml) as SiteConfig;
+const data = (load(siteYml) ?? {}) as Partial<SiteConfig>;
+
+// 可选字段留空时 CMS 可能不会把键写进文件，这里统一补默认值，避免页面读取 undefined 出错
+export const site: SiteConfig = {
+  title: data.title ?? '',
+  heroTitleLines: data.heroTitleLines ?? [],
+  artist: data.artist ?? '',
+  handle: data.handle ?? '',
+  bio: data.bio ?? '',
+  aboutIntro: data.aboutIntro ?? '',
+  email: data.email ?? '',
+  supportUrl: data.supportUrl ?? '',
+  heroCount: data.heroCount ?? 5,
+  nav: data.nav ?? [],
+  links: data.links ?? [],
+};
 
 export type LinkIcon = SiteLink['icon'];
