@@ -75,14 +75,15 @@ singletons:
         name: avatar
         widget: image
         required: false
-        media_folder: public/uploads/avatar
+        # 开头必须有斜杠（表示从仓库根目录算起）；少了斜杠会被后台当成「跟随内容文件的相对目录」，头像和图标两个字段会被视为同一目录，同名图片会误报冲突
+        media_folder: /public/uploads/avatar
         public_folder: /uploads/avatar
         hint: 留空则使用主题自带头像（src/assets/avatar.png）；旧头像会在保存后自动清理
       - label: 标签页图标
         name: favicon
         widget: image
         required: false
-        media_folder: public/uploads/favicon
+        media_folder: /public/uploads/favicon
         public_folder: /uploads/favicon
         hint: 留空则使用 public/favicon.svg 或 favicon.png；旧图标会在保存后自动清理
       - { label: 一句话简介, name: bio, widget: text, required: false }
