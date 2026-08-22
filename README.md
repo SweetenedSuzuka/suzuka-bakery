@@ -77,8 +77,8 @@ images:
 
 - 站点信息：`src/data/site.yml`（或后台「站点设置」）
 - 配色：`src/styles/global.css` 顶部的 CSS 变量，`--accent` 是主题色
-- 头像：替换 `src/assets/avatar.png`，正方形 PNG 即可
-- 图标：替换 `public/favicon.svg`；只有位图就删掉它，改放 `public/favicon.png`
+- 头像：在后台「站点设置」里直接上传；也可以替换 `src/assets/avatar.png`（正方形 PNG 即可）
+- 图标：在后台「站点设置」里直接上传；也可以替换 `public/favicon.svg`，只有位图就删掉它改放 `public/favicon.png`
 
 ## 部署到 GitHub Pages
 

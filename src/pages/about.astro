@@ -1,10 +1,9 @@
 ---
-import { Image } from 'astro:assets';
 import Base from '../layouts/Base.astro';
 import NavBar from '../components/NavBar.astro';
 import LinkIcon from '../components/LinkIcon.astro';
+import Avatar from '../components/Avatar.astro';
 import { site } from '../data/site';
-import avatar from '../assets/avatar.png';
 ---
 
 <Base title="ABOUT">
@@ -15,7 +14,7 @@ import avatar from '../assets/avatar.png';
     <h1 class="section-heading">ABOUT</h1>
 
     <div class="mt-10 flex items-center gap-5">
-      <Image src={avatar} alt={site.artist} class="size-24 rounded-full object-cover" widths={[192, 384]} />
+      <Avatar class="size-24 rounded-full object-cover" widths={[192, 384]} />
       <div>
         <p class="text-lg font-bold tracking-wide">{site.artist}</p>
         <p class="mt-1 text-sm text-muted">@{site.handle}</p>

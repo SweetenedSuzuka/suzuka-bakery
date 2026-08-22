@@ -52,6 +52,8 @@ backend:
 
 ## 注意事项
 
+- 用令牌（Token）登录时，细粒度令牌必须在创建页面把站点仓库选进「Only select repositories」，并把「Repository permissions → Contents」设为 **Read and write**；这一项默认不开，直接生成的令牌只读元数据，登录会提示没有访问权限。
+- 主题仓库自带的演示站，后台配置指向占位仓库 `your-name/my-site`，在那里尝试登录必然提示没有权限，以你自己部署的站点为准。
 - 登录过程中浏览器需要能访问 `github.com` 和 `workers.dev`；在中国大陆网络环境下，这意味着登录的人需要代理。发文等日常操作不走认证服务，只有登录这一步需要。
 - 一个认证服务可以供多个站点共用：把这些站点的域名都加进 `ALLOWED_DOMAINS`，各站的 `config.yml` 填同一个 `base_url` 即可。
 - 认证服务只负责换取令牌，不储存任何内容；写入仓库用的是登录者自己 GitHub 账号的权限。

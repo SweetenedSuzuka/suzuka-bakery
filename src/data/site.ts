@@ -16,6 +16,8 @@ export interface SiteConfig {
   aboutIntro: string;
   email: string;
   supportUrl: string;
+  avatar: string;
+  favicon: string;
   heroCount: number;
   nav: { label: string; href: string }[];
   links: SiteLink[];
@@ -34,6 +36,8 @@ export const site: SiteConfig = {
   aboutIntro: data.aboutIntro ?? '',
   email: data.email ?? '',
   supportUrl: data.supportUrl ?? '',
+  avatar: data.avatar ?? '',
+  favicon: data.favicon ?? '',
   heroCount: data.heroCount ?? 5,
   nav: data.nav ?? [],
   links: data.links ?? [],
